@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-nestjs
+  labels:
+    app: example-nestjs
+spec:
+  selector:
+    matchLabels:
+      app: example-nestjs
+  template:
+    metadata:
+      labels:
+        app: example-nestjs
+    spec:
+      containers:
+        - name: example-nestjs
+          image: example-nestjs-image
+          ports:
+            - containerPort: 3000
